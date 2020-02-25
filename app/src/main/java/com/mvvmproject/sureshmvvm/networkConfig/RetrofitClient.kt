@@ -1,9 +1,10 @@
-package cchcc.learn.amu
+package com.mvvmproject.sureshmvvm
 
 import android.os.Build
 import android.preference.PreferenceManager
 import android.util.Log
 import androidx.annotation.RequiresApi
+import cchcc.learn.amu.ApiService
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
