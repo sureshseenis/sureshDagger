@@ -1,7 +1,6 @@
-package com.mvvmproject.sureshmvvm
+package com.mvvmproject.sureshmvvm.networkConfig
 
 import android.os.Build
-import android.preference.PreferenceManager
 import android.util.Log
 import androidx.annotation.RequiresApi
 import cchcc.learn.amu.ApiService

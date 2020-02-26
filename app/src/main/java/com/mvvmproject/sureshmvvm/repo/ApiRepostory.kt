@@ -1,6 +1,7 @@
-package com.mvvmproject.sureshmvvm
+package com.mvvmproject.sureshmvvm.repo
 
 import cchcc.learn.amu.ApiLisener
+import com.mvvmproject.sureshmvvm.networkConfig.RetrofitClient
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
@@ -21,8 +22,11 @@ class ApiRepostory {
         private var appRepository: ApiRepostory? = null
 
         fun instance(): ApiRepostory {
-            if (appRepository == null) synchronized(ApiRepostory) {
-                appRepository = ApiRepostory()
+            if (appRepository == null) synchronized(
+                ApiRepostory
+            ) {
+                appRepository =
+                    ApiRepostory()
             }
             return appRepository!!
         }

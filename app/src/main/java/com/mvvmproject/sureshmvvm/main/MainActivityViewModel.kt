@@ -1,16 +1,17 @@
-package com.mvvmproject.sureshmvvm
+package com.mvvmproject.sureshmvvm.main
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import cchcc.learn.amu.ApiLisener
 import com.google.gson.JsonArray
-import org.json.JSONArray
+import com.mvvmproject.sureshmvvm.repo.ApiRepostory
 
 class MainActivityViewModel : ViewModel() {
 
     var data = MutableLiveData<JsonArray>()
-    private var mRepostory = ApiRepostory.instance()
+    private var mRepostory =
+        ApiRepostory.instance()
 
     init {
         mRepostory.dataFromApi(object : ApiLisener {

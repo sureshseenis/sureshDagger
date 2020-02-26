@@ -1,13 +1,13 @@
-package com.mvvmproject.sureshmvvm
+package com.mvvmproject.sureshmvvm.main
 
-import android.database.DatabaseUtils
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory
+import com.mvvmproject.sureshmvvm.R
+import com.mvvmproject.sureshmvvm.adapter.ListItemsAdapter
+import com.mvvmproject.sureshmvvm.common.Constants
 import com.mvvmproject.sureshmvvm.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -17,11 +17,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mDataBinding =
-            DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+            DataBindingUtil.setContentView<ActivityMainBinding>(
+                this,
+                R.layout.activity_main
+            )
         viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
 
         viewModel.data.observe(this, Observer {
-            mDataBinding.tvDataView.text = it.toString()
+            mDataBinding.adapter = ListItemsAdapter(it)
         })
+
+        Constants.pie
     }
 }
